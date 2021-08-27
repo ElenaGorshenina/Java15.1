@@ -61,7 +61,7 @@ public class Manager {
     public Collection<Issue> filterByAssignee(String assignee) {
         Issue[] result = new Issue[0];
         for (Issue issue : repository.findAll()) {
-            if (issue.getLabel() == assignee) {
+            if (issue.getAssignee() == assignee) {
                 Issue[] tmp = new Issue[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = issue;
